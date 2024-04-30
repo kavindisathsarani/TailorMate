@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #c06c84;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.MaterialFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcd0d6" height="366.0" layoutX="41.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="1172.0" />
+      <Label layoutX="475.0" layoutY="14.0" text="Manage Material">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="94.0" text="Material Id:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="219.0" text="Customer Id:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="94.0" text="Description:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="205.0" text="Qty:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="503.0" layoutY="319.0" text="Unit Price:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMaterialId" layoutX="61.0" layoutY="128.0" onAction="#txtSearchOnAction" prefHeight="54.0" prefWidth="237.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCustomerId" layoutX="61.0" layoutY="265.0" prefHeight="54.0" prefWidth="238.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDescription" layoutX="503.0" layoutY="128.0" prefHeight="54.0" prefWidth="626.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQty" layoutX="504.0" layoutY="236.0" prefHeight="54.0" prefWidth="377.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUnitPrice" layoutX="503.0" layoutY="356.0" prefHeight="54.0" prefWidth="398.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton buttonType="RAISED" layoutX="315.0" layoutY="263.0" onAction="#btnNewCustomerOnAction" prefHeight="54.0" prefWidth="116.0" style="-fx-background-color: #2ecc71;" text="NEW" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-add-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="649.0" layoutY="461.0" onAction="#btnClearOnAction" style="-fx-background-color: #69d2e7;" text="Clear">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-clear-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="785.0" layoutY="462.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #e6324b;" text="Delete">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-delete-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="939.0" layoutY="462.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #d9abff;" text="Update">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-update-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1097.0" layoutY="463.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #14c3a2;" text="save">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-save-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView fx:id="tblMaterial" layoutX="34.0" layoutY="523.0" prefHeight="148.0" prefWidth="1180.0">
+        <columns>
+          <TableColumn fx:id="colMaterialId" prefWidth="159.19997787475586" text="Material Id" />
+            <TableColumn fx:id="colDescription" prefWidth="416.79998779296875" text="Description" />
+            <TableColumn fx:id="colQty" prefWidth="165.5999755859375" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="262.4000244140625" text="Unit Price" />
+            <TableColumn fx:id="colCustomerId" prefWidth="174.4000244140625" text="Customer Id" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1111.0" layoutY="678.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #fa6900;" text="Back">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

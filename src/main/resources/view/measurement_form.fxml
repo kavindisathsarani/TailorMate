@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #c06c84;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.MeasurementFormController">
+   <children>
+      <Label layoutX="484.0" layoutY="7.0" text="Measurements">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcd0d6" height="356.0" layoutX="34.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="1173.0" />
+      <Label layoutX="56.0" layoutY="65.0" text="Measurement Id:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMeasurementId" layoutX="56.0" layoutY="92.0" prefHeight="26.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblDate" layoutX="985.0" layoutY="65.0" text="Date:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="147.0" text="customer Id:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCustomerId" layoutX="56.0" layoutY="174.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="56.0" layoutY="235.0" text="Employee Id:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmployeeId" layoutX="52.0" layoutY="262.0" prefHeight="40.0" prefWidth="175.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="56.0" layoutY="322.0" text="Neck Size:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="65.0" text="Armhole:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="147.0" text="Sleeve Length:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="235.0" text="Wrist:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="323.0" text="Chest:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="635.0" layoutY="65.0" text="Torso Length:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="635.0" layoutY="147.0" text="Waist:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="235.0" text="Hip:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="323.0" text="Crotch Length:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="937.0" layoutY="147.0" text="Shoulder Length:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="937.0" layoutY="235.0" text="Thigh Circumference:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="933.0" layoutY="323.0" text="Waist To Hem:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNeck" layoutX="52.0" layoutY="350.0" prefHeight="40.0" prefWidth="175.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtArm" layoutX="350.0" layoutY="92.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSleeve" layoutX="354.0" layoutY="174.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtWrist" layoutX="350.0" layoutY="258.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtChest" layoutX="350.0" layoutY="350.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTorso" layoutX="635.0" layoutY="92.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtWaist" layoutX="635.0" layoutY="172.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtHip" layoutX="631.0" layoutY="258.0" prefHeight="40.0" prefWidth="175.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCrotch" layoutX="631.0" layoutY="350.0" prefHeight="40.0" prefWidth="175.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtShoulder" layoutX="933.0" layoutY="172.0" prefHeight="40.0" prefWidth="168.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtThigh" layoutX="933.0" layoutY="258.0" prefHeight="40.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtWaistToHem" layoutX="934.0" layoutY="349.0" prefHeight="40.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="tblMeasurement" layoutX="34.0" layoutY="501.0" prefHeight="164.0" prefWidth="1174.0">
+        <columns>
+          <TableColumn fx:id="colMeasurementId" prefWidth="97.59997177124023" text="Measurement Id" />
+            <TableColumn fx:id="colNeck" prefWidth="89.60000610351562" text="Neck Size" />
+            <TableColumn fx:id="colArm" prefWidth="58.40000915527344" text="Armhole" />
+            <TableColumn fx:id="colSleeve" prefWidth="96.0" text="Sleeve Length" />
+            <TableColumn fx:id="colWrist" prefWidth="43.20001220703125" text="Wrist" />
+            <TableColumn fx:id="colChest" prefWidth="52.7999267578125" text="Chest" />
+            <TableColumn fx:id="colTorso" prefWidth="84.0" text="Torso Length" />
+            <TableColumn fx:id="colWaist" prefWidth="50.39996337890625" text="Waist" />
+            <TableColumn fx:id="colHip" prefWidth="32.0" text="Hip" />
+            <TableColumn fx:id="colCrotch" prefWidth="95.20001220703125" text="Crotch Length" />
+            <TableColumn fx:id="colShoulder" prefWidth="100.800048828125" text="Shoulder Width" />
+            <TableColumn fx:id="colThigh" prefWidth="131.199951171875" text="Thigh Circumference" />
+            <TableColumn fx:id="colWaistToHem" prefWidth="84.00002441406241" text="Waist To Hem" />
+            <TableColumn fx:id="colEmployeeId" prefWidth="78.4000244140625" text="Employee Id" />
+            <TableColumn fx:id="colCustomerId" text="Customer Id" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="689.0" layoutY="432.0" onAction="#btnClearOnAction" style="-fx-background-color: #69d2e7;" text="Clear">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-clear-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="817.0" layoutY="433.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #e6324b;" text="Delete">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-delete-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="946.0" layoutY="432.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #d9abff;" text="Update">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-update-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1094.0" layoutY="433.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #14c3a2;" text="save">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-save-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1113.0" layoutY="678.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #fa6900;" text="Back">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="227.0" layoutY="175.0" onAction="#btnNewCustomerOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #2ecc71;" text="NEW" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-add-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="923.0" layoutY="65.0" text="Date:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -34,13 +34,13 @@ public class LoginFormController {
     @FXML
     private TextField txtusername;
 
+
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
     String username=txtusername.getText();
     String password=txtpassword.getText();
 
-
-        try {
+     try {
             checkCredential(username, password);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "OOPS! something went wrong").show();
@@ -68,7 +68,7 @@ public class LoginFormController {
         }
     }
 
-    private void navigateToTheDashboard() throws IOException {
+    public  void navigateToTheDashboard() throws IOException {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
 
         Scene scene = new Scene(rootNode);

@@ -136,6 +136,8 @@ public class EmployeeFormController {
             boolean isDeleted = EmployeeRepo.delete(empoyeeId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee deleted!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -156,6 +158,8 @@ public class EmployeeFormController {
             boolean isSaved = EmployeeRepo.save(employee);
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee saved!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -176,6 +180,8 @@ public class EmployeeFormController {
             boolean isUpdated = EmployeeRepo.update(employee);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee updated!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

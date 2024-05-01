@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.db.DbConnection;
+import lk.ijse.tailorshop.repository.DashboardRepo;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -32,8 +33,8 @@ public class DashboardFormController {
 
     public void initialize() {
         try {
-            customerCount = getCustomerCount();
-            garmentCount=getGarmentCount();
+            customerCount = DashboardRepo.getCustomerCount();
+            garmentCount=DashboardRepo.getGarmentCount();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -46,40 +47,13 @@ public class DashboardFormController {
 
     }
 
-    private int getGarmentCount() throws SQLException {
-        String sql = "SELECT COUNT(*) AS garment_count FROM garment";
-
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        int garmentCount = 0;
-        if(resultSet.next()) {
-            garmentCount = resultSet.getInt("garment_count");
-        }
-        return garmentCount;
-    }
 
     private void setCustomerCount(int customerCount) {
         lblCustomerCount.setText(String.valueOf(customerCount));
 
     }
 
-    private int getCustomerCount() throws SQLException {
-        String sql = "SELECT COUNT(*) AS customer_count FROM customer";
 
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        int customerCount = 0;
-        if(resultSet.next()) {
-            customerCount = resultSet.getInt("customer_count");
-        }
-        return customerCount;
-    }
 
     @FXML
     void btnCustomerOnAction(ActionEvent event) throws IOException {

@@ -137,6 +137,8 @@ public class MaterialFormController {
             boolean isDeleted = MaterialRepo.delete(materialId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "material deleted!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -167,6 +169,8 @@ public class MaterialFormController {
             boolean isSaved = MaterialRepo.save(material);
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "material saved!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -187,6 +191,8 @@ public class MaterialFormController {
             boolean isUpdated = MaterialRepo.update(material);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "materail updated!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

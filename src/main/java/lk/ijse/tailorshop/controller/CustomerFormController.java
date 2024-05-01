@@ -147,6 +147,8 @@ public class CustomerFormController {
             boolean isDeleted = CustomerRepo.delete(customerId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -168,6 +170,7 @@ public class CustomerFormController {
             boolean isSaved = CustomerRepo.save(customer);
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -189,6 +192,8 @@ public class CustomerFormController {
             boolean isUpdated = CustomerRepo.update(customer);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

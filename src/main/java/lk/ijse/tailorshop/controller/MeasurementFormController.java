@@ -232,6 +232,8 @@ public class MeasurementFormController {
             boolean isDeleted = MeasurementRepo.delete(customerId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "measurement deleted!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -272,6 +274,8 @@ public class MeasurementFormController {
             boolean isSaved = MeasurementRepo.save(measurement);
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "measurement saved!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -302,6 +306,8 @@ public class MeasurementFormController {
             boolean isUpdated = MeasurementRepo.update(measurement);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "measurement updated!").show();
+                initialize();
+
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

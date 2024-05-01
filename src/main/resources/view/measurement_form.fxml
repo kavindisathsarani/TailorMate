@@ -12,14 +12,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #c06c84;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.MeasurementFormController">
+<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.MeasurementFormController">
    <children>
       <Label layoutX="484.0" layoutY="7.0" text="Measurements">
          <font>
-            <Font name="System Bold" size="36.0" />
+            <Font name="Calibri Bold" size="36.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcd0d6" height="356.0" layoutX="34.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="1173.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caf0f8" height="356.0" layoutX="34.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="1173.0" />
       <Label layoutX="56.0" layoutY="65.0" text="Measurement Id:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -30,7 +30,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label fx:id="lblDate" layoutX="985.0" layoutY="65.0" text="Date:">
+      <Label fx:id="lblDate" layoutX="994.0" layoutY="65.0" text="Date:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
@@ -50,67 +50,67 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmployeeId" layoutX="52.0" layoutY="262.0" prefHeight="40.0" prefWidth="175.0">
+      <TextField fx:id="txtEmployeeId" layoutX="52.0" layoutY="262.0" prefHeight="40.0" prefWidth="168.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="56.0" layoutY="322.0" text="Neck Size:">
+      <Label layoutX="56.0" layoutY="322.0" text="Neck Size(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="352.0" layoutY="65.0" text="Armhole:">
+      <Label layoutX="352.0" layoutY="65.0" text="Armhole(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="352.0" layoutY="147.0" text="Sleeve Length:">
+      <Label layoutX="352.0" layoutY="147.0" text="Sleeve Length(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="351.0" layoutY="235.0" text="Wrist:">
+      <Label layoutX="351.0" layoutY="235.0" text="Wrist(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="351.0" layoutY="323.0" text="Chest:">
+      <Label layoutX="351.0" layoutY="323.0" text="Chest(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="635.0" layoutY="65.0" text="Torso Length:">
+      <Label layoutX="635.0" layoutY="65.0" text="Torso Length(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="635.0" layoutY="147.0" text="Waist:">
+      <Label layoutX="635.0" layoutY="147.0" text="Waist(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="631.0" layoutY="235.0" text="Hip:">
+      <Label layoutX="631.0" layoutY="235.0" text="Hip(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="631.0" layoutY="323.0" text="Crotch Length:">
+      <Label layoutX="631.0" layoutY="323.0" text="Crotch Length(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="937.0" layoutY="147.0" text="Shoulder Length:">
+      <Label layoutX="937.0" layoutY="147.0" text="Shoulder Length(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="937.0" layoutY="235.0" text="Thigh Circumference:">
+      <Label layoutX="937.0" layoutY="235.0" text="Thigh Circumference(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="933.0" layoutY="323.0" text="Waist To Hem:">
+      <Label layoutX="933.0" layoutY="323.0" text="Waist To Hem(inches):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
@@ -209,7 +209,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="817.0" layoutY="433.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #e6324b;" text="Delete">
+      <JFXButton buttonType="RAISED" layoutX="817.0" layoutY="433.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #ffafcc;" text="Delete">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -224,7 +224,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="946.0" layoutY="432.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #d9abff;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="946.0" layoutY="432.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #cdb4db;" text="Update">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -239,7 +239,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1094.0" layoutY="433.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #14c3a2;" text="save">
+      <JFXButton buttonType="RAISED" layoutX="1094.0" layoutY="433.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #80ed99;" text="save">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -254,7 +254,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1113.0" layoutY="678.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #fa6900;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="1113.0" layoutY="678.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #9a8c98;" text="Back">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -284,7 +284,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <Label layoutX="923.0" layoutY="65.0" text="Date:">
+      <Label layoutX="933.0" layoutY="65.0" text="Date:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>

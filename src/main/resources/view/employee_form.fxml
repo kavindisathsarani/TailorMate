@@ -12,15 +12,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #c06c84;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.EmployeeFormController">
+<AnchorPane fx:id="root" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.EmployeeFormController">
    <children>
-      <Label layoutX="481.0" text="Manage Employees">
+      <Label layoutX="475.0" layoutY="6.0" text="Manage Employees">
          <font>
-            <Font name="System Bold" size="36.0" />
+            <Font name="Calibri Bold" size="36.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcd0d6" height="355.0" layoutX="23.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="1195.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caf0f8" height="355.0" layoutX="23.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="1195.0" />
       <Label layoutX="69.0" layoutY="90.0" text="Employee Id:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -46,17 +45,17 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="69.0" layoutY="118.0" onAction="#txtSearchOnAction" prefHeight="54.0" prefWidth="399.0">
+      <TextField fx:id="txtId" layoutX="69.0" layoutY="118.0" onAction="#txtSearchOnAction" prefHeight="54.0" prefWidth="464.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtName" layoutX="69.0" layoutY="229.0" prefHeight="54.0" prefWidth="486.0">
+      <TextField fx:id="txtName" layoutX="69.0" layoutY="229.0" prefHeight="54.0" prefWidth="464.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAddress" layoutX="66.0" layoutY="339.0" prefHeight="54.0" prefWidth="556.0">
+      <TextField fx:id="txtAddress" layoutX="66.0" layoutY="339.0" prefHeight="54.0" prefWidth="464.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -86,7 +85,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="792.0" layoutY="439.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #e6324b;" text="Delete">
+      <JFXButton buttonType="RAISED" layoutX="792.0" layoutY="439.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #ffafcc;" text="Delete">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -101,7 +100,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="944.0" layoutY="438.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #d9abff;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="944.0" layoutY="438.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #cdb4db;" text="Update">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -116,7 +115,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1104.0" layoutY="438.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #14c3a2;" text="save">
+      <JFXButton buttonType="RAISED" layoutX="1104.0" layoutY="438.0" onAction="#btnSaveOnAction" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: #80ed99;" text="save">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -141,7 +140,7 @@
             <TableColumn fx:id="colPosition" prefWidth="181.60003662109375" text="Position" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="1115.0" layoutY="680.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #fa6900;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="1115.0" layoutY="680.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #9a8c98;" text="Back">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

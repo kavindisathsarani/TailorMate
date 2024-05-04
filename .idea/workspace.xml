@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="setResizable(false)">
+    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="register form and login form fixed into one stage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/LoginFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/RegisterFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/RegisterFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/register_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/register_form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,9 @@
       <workItem from="1714549714434" duration="222000" />
       <workItem from="1714785691359" duration="3174000" />
       <workItem from="1714788901676" duration="244000" />
-      <workItem from="1714821401858" duration="488000" />
+      <workItem from="1714821401858" duration="1224000" />
+      <workItem from="1714822785032" duration="23000" />
+      <workItem from="1714822864964" duration="542000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />
@@ -136,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714788928030</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="register form and login form fixed into one stage">
+      <option name="closed" value="true" />
+      <created>1714822255922</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714822255922</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +154,7 @@
     <MESSAGE value="initialize(); method invoke" />
     <MESSAGE value="just" />
     <MESSAGE value="setResizable(false)" />
-    <option name="LAST_COMMIT_MESSAGE" value="setResizable(false)" />
+    <MESSAGE value="register form and login form fixed into one stage" />
+    <option name="LAST_COMMIT_MESSAGE" value="register form and login form fixed into one stage" />
   </component>
 </project>

@@ -252,6 +252,7 @@ public class OrderFormController {
         Stage stage = (Stage) pane.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Dashboard Form");
         stage.centerOnScreen();
 

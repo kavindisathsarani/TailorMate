@@ -75,8 +75,10 @@ public class LoginFormController {
         Scene scene = new Scene(rootNode);
 
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.centerOnScreen();
+
         stage.setTitle("Dashboard Form");
     }
 
@@ -87,7 +89,7 @@ public class LoginFormController {
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
-
+        stage.setResizable(false);
         stage.setTitle("Register Form");
 
         stage.show();

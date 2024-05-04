@@ -61,6 +61,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Customer Form");
         stage.centerOnScreen();
     }
@@ -71,6 +72,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Employee Form");
         stage.centerOnScreen();
     }
@@ -83,6 +85,7 @@ public class DashboardFormController {
 
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.setTitle("Login Form");
     }
 
@@ -92,6 +95,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Garment Form");
         stage.centerOnScreen();
     }
@@ -102,6 +106,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Material Form");
         stage.centerOnScreen();
     }
@@ -112,6 +117,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Measurement Form");
         stage.centerOnScreen();
     }
@@ -122,6 +128,7 @@ public class DashboardFormController {
         Stage stage = (Stage) rootNode.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
         stage.setTitle("Order Form");
         stage.centerOnScreen();
     }

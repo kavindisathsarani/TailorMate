@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Shadow?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.RegisterFormController">
+<AnchorPane fx:id="rootNode" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.RegisterFormController">
    <children>
       <ImageView fitHeight="439.0" fitWidth="442.0" layoutX="150.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" scaleX="1.7" scaleY="1.7">
          <image>
@@ -22,7 +23,7 @@
             <Font name="Calibri Bold" size="37.0" />
          </font>
       </Label>
-      <Label layoutX="784.0" layoutY="132.0" prefHeight="18.0" prefWidth="62.0" text="userId:">
+      <Label layoutX="782.0" layoutY="138.0" prefHeight="18.0" prefWidth="62.0" text="userId:">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -38,7 +39,7 @@
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Label layoutX="783.0" layoutY="356.0" text="password:">
+      <Label layoutX="783.0" layoutY="354.0" text="password:">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -57,5 +58,15 @@
             <Shadow />
          </effect>
       </JFXButton>
+      <Label layoutX="794.0" layoutY="620.0" prefHeight="20.0" prefWidth="161.0" text="Already Registered?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="1028.0" layoutY="616.0" onAction="#linkBackToLoginOnAction" prefHeight="35.0" prefWidth="179.0" text="Back To Login Page">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

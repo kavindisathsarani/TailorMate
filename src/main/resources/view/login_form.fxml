@@ -24,15 +24,15 @@
             <Font name="Calibri Bold" size="37.0" />
          </font>
       </Label>
-      <TextField fx:id="txtusername" layoutX="800.0" layoutY="176.0" prefHeight="59.0" prefWidth="410.0" promptText="input your username here">
+      <TextField fx:id="txtusername" layoutX="796.0" layoutY="238.0" prefHeight="51.0" prefWidth="410.0" promptText="input your username here">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="txtpassword" layoutX="798.0" layoutY="322.0" prefHeight="59.0" prefWidth="410.0" promptText="input your password here">
+      <TextField fx:id="txtpassword" layoutX="796.0" layoutY="344.0" prefHeight="51.0" prefWidth="410.0" promptText="input your password here">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="796.0" layoutY="438.0" onAction="#btnLoginOnAction" prefHeight="59.0" prefWidth="410.0" style="-fx-background-color: #00B4D8;" text="LOGIN" textFill="#1e2123">
+      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="796.0" layoutY="452.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="410.0" style="-fx-background-color: #00B4D8;" text="LOGIN" textFill="#1e2123">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -47,19 +47,19 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <Hyperlink layoutX="1006.0" layoutY="553.0" onAction="#linkRegistrationOnAction" prefHeight="44.0" prefWidth="202.0" style="-fx-background-color: FFFFFF;" text="   click here to register">
+      <Hyperlink layoutX="1005.0" layoutY="524.0" onAction="#linkRegistrationOnAction" prefHeight="44.0" prefWidth="202.0" style="-fx-background-color: FFFFFF;" text="   click here to register">
          <font>
             <Font size="18.0" />
          </font></Hyperlink>
-      <Label layoutX="796.0" layoutY="553.0" prefHeight="44.0" prefWidth="209.0" style="-fx-background-color: FFFFFF;" text="  Don't have an account?" textFill="#252526">
+      <Label layoutX="796.0" layoutY="524.0" prefHeight="44.0" prefWidth="209.0" style="-fx-background-color: FFFFFF;" text="  Don't have an account?" textFill="#252526">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="800.0" layoutY="149.0" prefHeight="27.0" prefWidth="102.0" text="username:" textFill="#262828">
+      <Label layoutX="796.0" layoutY="203.0" prefHeight="27.0" prefWidth="102.0" text="username:" textFill="#262828">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="800.0" layoutY="295.0" prefHeight="27.0" prefWidth="102.0" text="password:" textFill="#1f2020">
+      <Label layoutX="796.0" layoutY="308.0" prefHeight="27.0" prefWidth="102.0" text="password:" textFill="#1f2020">
          <font>
             <Font size="18.0" />
          </font></Label>

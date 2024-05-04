@@ -55,6 +55,7 @@ public class LoginFormController {
         pstm.setObject(1, username);
 
         ResultSet resultSet = pstm.executeQuery();
+
         if(resultSet.next()) {
             String dbPw = resultSet.getString(2);
 

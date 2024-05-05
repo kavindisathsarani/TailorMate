@@ -15,6 +15,11 @@
 
 <AnchorPane fx:id="pane" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.OrderFormController">
    <children>
+      <ImageView fitHeight="411.0" fitWidth="652.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" scaleX="1.9" scaleY="1.03">
+         <image>
+            <Image url="@../asserts/icon/background.jpg" />
+         </image>
+      </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caf0f8" height="373.0" layoutX="36.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="1159.0" />
       <Label layoutX="510.0" text="Place Orders">
          <font>

@@ -11,11 +11,13 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.model.*;
 import lk.ijse.tailorshop.model.Tm.GarmentCartTm;
 import lk.ijse.tailorshop.repository.*;
+import lk.ijse.tailorshop.util.Regex;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -321,6 +323,16 @@ public class OrderFormController {
     @FXML
     void txtQtyOnAction(ActionEvent event) {
         btnPlaceOrderOnAction(event);
+
+    }
+
+    public void txtCustomerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtCustomerId);
+
+    }
+
+    public void txtDueDateOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.DUEDATE,txtDuedate);
 
     }
 }

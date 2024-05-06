@@ -11,11 +11,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.model.Material;
 import lk.ijse.tailorshop.model.Tm.MaterialTm;
 import lk.ijse.tailorshop.repository.MaterialRepo;
+import lk.ijse.tailorshop.util.Regex;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -217,5 +219,21 @@ public class MaterialFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void txtMaterialIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MATERIALID,txtMaterialId);
+
+    }
+
+
+    public void txtCustomerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtCustomerId);
+
+    }
+
+    public void txtQtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.QTY,txtQty);
+
     }
 }

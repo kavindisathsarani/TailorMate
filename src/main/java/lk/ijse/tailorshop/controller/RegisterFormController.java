@@ -5,9 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.repository.RegisterRepo;
+import lk.ijse.tailorshop.util.Regex;
 
 import java.io.IOException;
 
@@ -41,6 +43,11 @@ public class RegisterFormController {
         stage.setResizable(false);
         stage.setTitle("login Form");
         stage.centerOnScreen();
+    }
+
+    public void txtUserIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.USERID,txtUserId);
+
     }
 
 }

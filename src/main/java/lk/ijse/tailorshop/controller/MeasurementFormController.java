@@ -8,11 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.model.Measurement;
 import lk.ijse.tailorshop.model.Tm.MeasurementTm;
 import lk.ijse.tailorshop.repository.MeasurementRepo;
+import lk.ijse.tailorshop.util.Regex;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -343,6 +345,21 @@ public class MeasurementFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void txtMeasurementIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MEASUREMENTID,txtMeasurementId);
+
+    }
+
+    public void txtCustomerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtCustomerId);
+
+    }
+
+    public void txtEmployeeIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMPLOYEEID,txtEmployeeId);
+
     }
 
 }

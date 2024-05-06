@@ -45,17 +45,17 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="292.0" text="Unit Price:">
+      <Label layoutX="678.0" layoutY="292.0" text="Unit Price(Rs):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtMaterialId" layoutX="61.0" layoutY="128.0" onAction="#txtSearchOnAction" prefHeight="54.0" prefWidth="458.0">
+      <TextField fx:id="txtMaterialId" layoutX="61.0" layoutY="128.0" onAction="#txtSearchOnAction" onKeyReleased="#txtMaterialIdOnKeyReleased" prefHeight="54.0" prefWidth="458.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerId" layoutX="61.0" layoutY="265.0" prefHeight="54.0" prefWidth="458.0">
+      <TextField fx:id="txtCustomerId" layoutX="61.0" layoutY="265.0" onKeyReleased="#txtCustomerIdOnKeyReleased" prefHeight="54.0" prefWidth="458.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtQty" layoutX="678.0" layoutY="219.0" prefHeight="54.0" prefWidth="458.0">
+      <TextField fx:id="txtQty" layoutX="678.0" layoutY="219.0" onKeyReleased="#txtQtyOnKeyReleased" prefHeight="54.0" prefWidth="458.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -174,5 +174,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="469.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/icons8-search-50.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -46,7 +46,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDuedate" layoutX="570.0" layoutY="86.0" prefHeight="46.0" prefWidth="302.0">
+      <TextField fx:id="txtDuedate" layoutX="570.0" layoutY="86.0" onKeyReleased="#txtDueDateOnKeyReleased" prefHeight="46.0" prefWidth="302.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustomerId" layoutX="48.0" layoutY="150.0" prefHeight="46.0" prefWidth="225.0">
+      <TextField fx:id="txtCustomerId" layoutX="48.0" layoutY="150.0" onKeyReleased="#txtCustomerIdOnKeyReleased" prefHeight="46.0" prefWidth="225.0">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -90,7 +90,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="569.0" layoutY="232.0" text="Description:">
+      <Label layoutX="569.0" layoutY="227.0" text="Description:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
@@ -100,17 +100,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="783.0" layoutY="232.0" text="Category:">
+      <Label layoutX="784.0" layoutY="227.0" text="Category:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCategory" layoutX="785.0" layoutY="257.0" prefHeight="39.0" prefWidth="170.0" text="category">
+      <Label fx:id="lblCategory" layoutX="779.0" layoutY="262.0" prefHeight="39.0" prefWidth="170.0" text="category">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="962.0" layoutY="232.0" text="Size:">
+      <Label layoutX="962.0" layoutY="227.0" text="Size:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
@@ -186,12 +186,12 @@
             <TableColumn fx:id="colAction" prefWidth="107.199951171875" text="Action" />
         </columns>
       </TableView>
-      <Label layoutX="36.0" layoutY="684.0" text="Net Total:">
+      <Label layoutX="36.0" layoutY="684.0" text="Net Total(Rs):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblNetTotal" layoutX="127.0" layoutY="678.0" prefHeight="40.0" prefWidth="142.0" text="net total">
+      <Label fx:id="lblNetTotal" layoutX="154.0" layoutY="678.0" prefHeight="40.0" prefWidth="142.0" text="net total">
          <font>
             <Font size="18.0" />
          </font>
@@ -226,12 +226,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label layoutX="1086.0" layoutY="232.0" text="QtyOnHand:">
+      <Label layoutX="1087.0" layoutY="227.0" text="QtyOnHand:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblQtyOnHand" layoutX="1097.0" layoutY="272.0" prefHeight="27.0" prefWidth="96.0" text="QtyOnHand">
+      <Label fx:id="lblQtyOnHand" layoutX="1097.0" layoutY="261.0" prefHeight="39.0" prefWidth="96.0" text="QtyOnHand">
          <font>
             <Font size="18.0" />
          </font>

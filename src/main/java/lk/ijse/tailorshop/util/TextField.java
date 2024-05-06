@@ -1,0 +1,6 @@
+package lk.ijse.tailorshop.util;
+
+public enum TextField {
+CUSTOMERID,ADDRESS,EMAIL,MATERIALID,QTY,EMPLOYEEID,MEASUREMENTID,DUEDATE,USERID
+
+}

@@ -11,11 +11,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.model.Customer;
 import lk.ijse.tailorshop.model.Tm.CustomerTm;
 import lk.ijse.tailorshop.repository.CustomerRepo;
+import lk.ijse.tailorshop.util.Regex;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -224,4 +226,20 @@ public class CustomerFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+
+    public void txtCustomerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtId);
+    }
+
+
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ADDRESS,txtAddress);
+    }
+
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMAIL,txtEmail);
+
+    }
+
 }

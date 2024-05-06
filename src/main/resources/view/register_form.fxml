@@ -27,7 +27,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="txtUserId" layoutX="783.0" layoutY="166.0" prefHeight="54.0" prefWidth="416.0" promptText="input user Id">
+      <TextField fx:id="txtUserId" layoutX="783.0" layoutY="166.0" onKeyReleased="#txtUserIdOnKeyReleased" prefHeight="54.0" prefWidth="416.0" promptText="input user Id">
          <font>
             <Font size="18.0" />
          </font></TextField>

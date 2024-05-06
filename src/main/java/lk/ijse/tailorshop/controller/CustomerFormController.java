@@ -158,7 +158,7 @@ public class CustomerFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        //save customer
+     //save customer
      String customerId=txtId.getText();
      String name=txtName.getText();
      String gender=txtGender.getText();
@@ -181,6 +181,8 @@ public class CustomerFormController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        //update customer info
+
         String customerId =txtId.getText();
         String name=txtName.getText();
         String gender=txtGender.getText();

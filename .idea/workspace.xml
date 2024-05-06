@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="background change except login">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" afterDir="false" />
+    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="login background changed">
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/CustomerFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1714889321243" duration="13000" />
       <workItem from="1714889368867" duration="838000" />
       <workItem from="1714892208777" duration="3059000" />
-      <workItem from="1715003149128" duration="415000" />
+      <workItem from="1715003149128" duration="1115000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />
@@ -174,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714895240196</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="login background changed">
+      <option name="closed" value="true" />
+      <created>1715003829157</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715003829157</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +194,7 @@
     <MESSAGE value="setResizable(false)" />
     <MESSAGE value="register form and login form fixed into one stage" />
     <MESSAGE value="background change except login" />
-    <option name="LAST_COMMIT_MESSAGE" value="background change except login" />
+    <MESSAGE value="login background changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="login background changed" />
   </component>
 </project>

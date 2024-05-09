@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class LoginFormController {
     private AnchorPane rootNode;
 
     @FXML
-    private TextField txtpassword;
+    private PasswordField pw;
 
     @FXML
     private TextField txtusername;
@@ -38,7 +39,7 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
     String username=txtusername.getText();
-    String password=txtpassword.getText();
+    String password=pw.getText();
 
      try {
             checkCredential(username, password);

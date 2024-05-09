@@ -14,18 +14,21 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.model.*;
 import lk.ijse.tailorshop.model.Tm.GarmentCartTm;
 import lk.ijse.tailorshop.repository.*;
 import lk.ijse.tailorshop.util.Regex;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 
 public class OrderFormController {
@@ -335,4 +338,24 @@ public class OrderFormController {
         Regex.setTextColor(lk.ijse.tailorshop.util.TextField.DUEDATE,txtDuedate);
 
     }
+
+    public void btnGenerateReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/OrderDetailReport.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+
+
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
+    }
+
 }

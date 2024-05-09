@@ -179,5 +179,13 @@
             <Image url="@../asserts/icon/icons8-search-50.png" />
          </image>
       </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="890.0" layoutY="680.0" onAction="#btnGenerateReportOnAction" prefHeight="42.0" prefWidth="191.0" style="-fx-background-color: #caf0f8;" text="Generate a Report">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.model.AddGarment;
 import lk.ijse.tailorshop.model.Garment;
 import lk.ijse.tailorshop.model.Material;
@@ -20,12 +21,14 @@ import lk.ijse.tailorshop.model.Tm.MaterialCartTm;
 import lk.ijse.tailorshop.repository.AddGarmentRepo;
 import lk.ijse.tailorshop.repository.GarmentRepo;
 import lk.ijse.tailorshop.repository.MaterialRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class GarmentFormController {
 
@@ -302,4 +305,25 @@ public class GarmentFormController {
     void txtQtyOnAction(ActionEvent event) {
        btnAddInfoOnAction(event);
     }
+
+    public void btnGenerateReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/GarmentsDetailReport.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+
+
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
+    }
+
+
 }

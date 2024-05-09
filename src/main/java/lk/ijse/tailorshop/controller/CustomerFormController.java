@@ -14,15 +14,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.model.Customer;
 import lk.ijse.tailorshop.model.Tm.CustomerTm;
 import lk.ijse.tailorshop.repository.CustomerRepo;
 import lk.ijse.tailorshop.util.Regex;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class CustomerFormController {
@@ -240,6 +247,25 @@ public class CustomerFormController {
     public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMAIL,txtEmail);
 
+    }
+
+    public void btnGenerateReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/CustomerDetailReport.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("CustomerID",txtId.getText());
+
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
 }

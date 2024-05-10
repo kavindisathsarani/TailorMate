@@ -164,5 +164,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <ImageView fitHeight="288.0" fitWidth="405.0" layoutX="633.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="1.5">
+         <image>
+            <Image url="@../asserts/icon/tailor-with-sewing-cloth-pincushion-threads-fashion-designer-seamstress-scissors-and-measuring-to-make-clothes-in-flat-background-illustration-vector.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

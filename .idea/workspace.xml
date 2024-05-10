@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="jasper reports 5 done">
+    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="password field done">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/tailor-with-sewing-cloth-pincushion-threads-fashion-designer-seamstress-scissors-and-measuring-to-make-clothes-in-flat-background-illustration-vector.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/tailorfinallogo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/LoginFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,29 +36,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LauncherWrapper.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Documents/tailorShop-after-validation-jasper/src/main/resources/Report&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LauncherWrapper.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/DELL/Documents/tailorShop-after-validation-jasper/src/main/resources/asserts/icon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Documents\tailorShop-after-validation-jasper\src\main\resources\asserts\icon" />
+      <recent name="C:\Users\DELL\Documents\tailorShop-after-validation-jasper\src\main\resources\view" />
       <recent name="C:\Users\DELL\Documents\tailorShop-after-validation-jasper\src\main\resources\Report" />
       <recent name="C:\Users\DELL\Documents\tailorShop-validation-test1\src\main\resources\asserts\icon" />
       <recent name="C:\Users\DELL\Documents\tailorShop-final-test\src\main\resources\asserts\icon" />
-      <recent name="C:\Users\DELL\Documents\tailorShop-final-test\src\main\resources\asserts" />
-      <recent name="C:\Users\DELL\Documents\tailorShop-final-test\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lk.ijse.tailorshop.controller" />
@@ -90,7 +92,8 @@
       <workItem from="1715003149128" duration="1115000" />
       <workItem from="1715004775336" duration="12009000" />
       <workItem from="1715264274561" duration="3941000" />
-      <workItem from="1715270539964" duration="4684000" />
+      <workItem from="1715270539964" duration="4969000" />
+      <workItem from="1715304434146" duration="1889000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />
@@ -196,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715274540842</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="password field done">
+      <option name="closed" value="true" />
+      <created>1715276987614</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715276987614</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +222,7 @@
     <MESSAGE value="background change except login" />
     <MESSAGE value="login background changed" />
     <MESSAGE value="jasper reports 5 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="jasper reports 5 done" />
+    <MESSAGE value="password field done" />
+    <option name="LAST_COMMIT_MESSAGE" value="password field done" />
   </component>
 </project>

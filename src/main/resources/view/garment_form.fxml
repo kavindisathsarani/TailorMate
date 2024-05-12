@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,134 +17,134 @@
 
 <AnchorPane fx:id="pane" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.GarmentFormController">
    <children>
-      <ImageView fitHeight="366.0" fitWidth="589.0" layoutX="322.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" scaleX="2.14" scaleY="1.11">
+      <ImageView fitHeight="361.0" fitWidth="583.0" layoutX="331.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" scaleX="2.16" scaleY="1.11">
          <image>
             <Image url="@../asserts/icon/background.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="464.0" layoutY="14.0" text="Manage Garments">
+      <Label layoutX="467.0" layoutY="103.0" text="Manage Garments">
          <font>
             <Font name="Calibri Bold" size="36.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caf0f8" height="338.0" layoutX="32.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="1174.0" />
-      <Label fx:id="lblGarmentId" layoutX="143.0" layoutY="69.0" prefHeight="27.0" prefWidth="102.0" text="Garment Id" textFill="#177eae">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caf0f8" height="338.0" layoutX="33.0" layoutY="151.0" stroke="BLACK" strokeType="INSIDE" width="1174.0" />
+      <Label fx:id="lblGarmentId" layoutX="144.0" layoutY="153.0" prefHeight="27.0" prefWidth="102.0" text="Garment Id" textFill="#177eae">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="42.0" layoutY="69.0" text="Garment Id:">
+      <Label layoutX="43.0" layoutY="153.0" text="Garment Id:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="315.0" layoutY="69.0" text="Garment Name:">
+      <Label layoutX="316.0" layoutY="153.0" text="Garment Name:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtGarmentDescription" layoutX="42.0" layoutY="144.0" prefHeight="39.0" prefWidth="230.0">
+      <TextField fx:id="txtGarmentDescription" layoutX="43.0" layoutY="228.0" prefHeight="39.0" prefWidth="230.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtName" layoutX="315.0" layoutY="98.0" prefHeight="40.0" prefWidth="372.0">
+      <TextField fx:id="txtName" layoutX="316.0" layoutY="182.0" prefHeight="40.0" prefWidth="372.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCategory" layoutX="706.0" layoutY="97.0" prefHeight="40.0" prefWidth="269.0">
+      <TextField fx:id="txtCategory" layoutX="707.0" layoutY="181.0" prefHeight="40.0" prefWidth="269.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSize" layoutX="1004.0" layoutY="98.0" prefHeight="40.0" prefWidth="168.0">
+      <TextField fx:id="txtSize" layoutX="1005.0" layoutY="182.0" prefHeight="40.0" prefWidth="168.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="41.0" layoutY="117.0" text="Description:">
+      <Label layoutX="42.0" layoutY="201.0" text="Description:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="706.0" layoutY="69.0" text="Catergory:">
+      <Label layoutX="707.0" layoutY="153.0" text="Catergory:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="1004.0" layoutY="69.0" text="Size:">
+      <Label layoutX="1005.0" layoutY="153.0" text="Size:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="315.0" layoutY="159.0" text="Material Cost(Rs):">
+      <Label layoutX="316.0" layoutY="243.0" text="Material Cost(Rs):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtMaterialCost" layoutX="315.0" layoutY="183.0" prefHeight="40.0" prefWidth="372.0">
+      <TextField fx:id="txtMaterialCost" layoutX="316.0" layoutY="267.0" prefHeight="40.0" prefWidth="372.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="706.0" layoutY="159.0" text="Towage(Rs):">
+      <Label layoutX="707.0" layoutY="243.0" text="Towage(Rs):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="1007.0" layoutY="159.0" text="Total Price(Rs):">
+      <Label layoutX="1008.0" layoutY="243.0" text="Total Price(Rs):">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTowage" layoutX="706.0" layoutY="183.0" prefHeight="40.0" prefWidth="262.0">
+      <TextField fx:id="txtTowage" layoutX="707.0" layoutY="267.0" prefHeight="40.0" prefWidth="262.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtTotalPrice" layoutX="1003.0" layoutY="183.0" prefHeight="40.0" prefWidth="168.0">
+      <TextField fx:id="txtTotalPrice" layoutX="1004.0" layoutY="267.0" prefHeight="40.0" prefWidth="168.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbMaterialId" layoutX="42.0" layoutY="291.0" onAction="#cmbMaterialOnAction" prefHeight="40.0" prefWidth="185.0" />
-      <Label layoutX="43.0" layoutY="264.0" text="Material Id:">
+      <ComboBox fx:id="cmbMaterialId" layoutX="43.0" layoutY="375.0" onAction="#cmbMaterialOnAction" prefHeight="40.0" prefWidth="185.0" />
+      <Label layoutX="44.0" layoutY="348.0" text="Material Id:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="255.0" layoutY="264.0" text="Material Description:">
+      <Label layoutX="256.0" layoutY="348.0" text="Material Description:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="541.0" layoutY="264.0" text="QtyOnHand:">
+      <Label layoutX="542.0" layoutY="348.0" text="QtyOnHand:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="719.0" layoutY="264.0" text="Unit Price:">
+      <Label layoutX="720.0" layoutY="348.0" text="Unit Price:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="869.0" layoutY="264.0" text="Customer Id:">
+      <Label layoutX="870.0" layoutY="348.0" text="Customer Id:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="1056.0" layoutY="264.0" text="Qty:">
+      <Label layoutX="1057.0" layoutY="348.0" text="Qty:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="1055.0" layoutY="294.0" onAction="#txtQtyOnAction" prefHeight="40.0" prefWidth="128.0">
+      <TextField fx:id="txtQty" layoutX="1056.0" layoutY="378.0" onAction="#txtQtyOnAction" prefHeight="40.0" prefWidth="128.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnAddInfo" buttonType="RAISED" layoutX="1061.0" layoutY="356.0" onAction="#btnAddInfoOnAction" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #3498db;" text="Add info">
+      <JFXButton fx:id="btnAddInfo" buttonType="RAISED" layoutX="1062.0" layoutY="440.0" onAction="#btnAddInfoOnAction" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #3498db;" text="Add info">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -157,7 +159,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <TableView fx:id="tblMaterialCart" layoutX="32.0" layoutY="450.0" prefHeight="200.0" prefWidth="1174.0">
+      <TableView fx:id="tblMaterialCart" layoutX="33.0" layoutY="508.0" prefHeight="161.0" prefWidth="1174.0">
         <columns>
           <TableColumn fx:id="colMaterialId" prefWidth="133.59997177124023" text="Material Id" />
           <TableColumn fx:id="colMaterialDescription" prefWidth="336.0" text="Material Description" />
@@ -203,22 +205,22 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label fx:id="lblMaterialDescription" layoutX="255.0" layoutY="303.0" prefHeight="27.0" prefWidth="270.0" text="material Description">
+      <Label fx:id="lblMaterialDescription" layoutX="256.0" layoutY="387.0" prefHeight="27.0" prefWidth="270.0" text="material Description">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblQtyOnHand" layoutX="542.0" layoutY="303.0" prefHeight="18.0" prefWidth="102.0" text="QtyOnHand">
+      <Label fx:id="lblQtyOnHand" layoutX="543.0" layoutY="387.0" prefHeight="18.0" prefWidth="102.0" text="QtyOnHand">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblUnitPrice" layoutX="718.0" layoutY="303.0" prefHeight="18.0" prefWidth="89.0" text="Unit Price">
+      <Label fx:id="lblUnitPrice" layoutX="719.0" layoutY="387.0" prefHeight="18.0" prefWidth="89.0" text="Unit Price">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCustomerId" layoutX="871.0" layoutY="303.0" prefHeight="27.0" prefWidth="102.0" text="customer Id">
+      <Label fx:id="lblCustomerId" layoutX="872.0" layoutY="387.0" prefHeight="27.0" prefWidth="102.0" text="customer Id">
          <font>
             <Font size="18.0" />
          </font>
@@ -228,12 +230,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="189.0" text="QtyOnHand:">
+      <Label layoutX="44.0" layoutY="273.0" text="QtyOnHand:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand" layoutX="41.0" layoutY="216.0" prefHeight="40.0" prefWidth="230.0">
+      <TextField fx:id="txtQtyOnHand" layoutX="42.0" layoutY="300.0" prefHeight="40.0" prefWidth="230.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -249,6 +251,141 @@
             <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../asserts/icon/icons8-report-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a9c6d9" height="88.0" layoutX="2.0" stroke="#343536" strokeType="INSIDE" width="1242.0" />
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="369.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" text="Employees">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-portfolio-80.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="199.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" text="Customers">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-customer-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="522.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" text="Measurements">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-sewing-tape-measure-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="720.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" text="Materials">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-embroidery-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXButton>
+      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="867.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" stylesheets="@../Style/buttonStyle.css" text="Garments">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-dress-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1025.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" text="Orders">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="77.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-order-80.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1157.0" layoutY="33.0" onAction="#btnExitOnAction" text="Exit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-exit-50.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="88.0" fitWidth="102.0" layoutX="-3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/tailorfinallogo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" text="Home">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Shadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-home-50.png" />
                </image>
             </ImageView>
          </graphic>

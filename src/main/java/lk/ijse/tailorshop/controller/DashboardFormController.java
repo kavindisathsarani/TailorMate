@@ -132,4 +132,15 @@ public class DashboardFormController {
         stage.setTitle("Order Form");
         stage.centerOnScreen();
     }
+
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
+        Stage stage = (Stage) rootNode.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Dashboard Form");
+        stage.centerOnScreen();
+    }
+
 }

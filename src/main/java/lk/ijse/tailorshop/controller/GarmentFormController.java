@@ -325,5 +325,85 @@ public class GarmentFormController {
         JasperViewer.viewReport(jasperPrint,false);
     }
 
+    public void btnEmployeeOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/employee_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Employee Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/customer_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Customer Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnMeasurementOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/measurement_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Measurement Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnMaterialOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/material_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Material Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnGarmentOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/garment_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Garment Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnOrderOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/order_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Order Form");
+        stage.centerOnScreen();
+    }
+
+    public void btnExitOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
+
+        Scene scene = new Scene(rootNode);
+
+        Stage stage = (Stage) this.pane.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Login Form");
+    }
+
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Dashboard Form");
+        stage.centerOnScreen();
+    }
 
 }

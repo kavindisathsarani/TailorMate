@@ -49,11 +49,11 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <Hyperlink layoutX="1005.0" layoutY="524.0" onAction="#linkRegistrationOnAction" prefHeight="44.0" prefWidth="202.0" style="-fx-background-color: FFFFFF;" text="   click here to register">
+      <Hyperlink layoutX="1005.0" layoutY="524.0" onAction="#linkRegistrationOnAction" prefHeight="44.0" prefWidth="202.0" text="   click here to register">
          <font>
             <Font size="18.0" />
          </font></Hyperlink>
-      <Label layoutX="796.0" layoutY="524.0" prefHeight="44.0" prefWidth="209.0" style="-fx-background-color: FFFFFF;" text="  Don't have an account?" textFill="#252526">
+      <Label layoutX="796.0" layoutY="524.0" prefHeight="44.0" prefWidth="209.0" text="  Don't have an account?" textFill="#252526">
          <font>
             <Font size="18.0" />
          </font></Label>

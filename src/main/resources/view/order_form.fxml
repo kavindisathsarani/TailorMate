@@ -198,7 +198,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="638.0" layoutY="676.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #9a8c98;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="483.0" layoutY="674.0" onAction="#btnBackOnAction" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #9a8c98;" text="Back">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -213,7 +213,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1015.0" layoutY="675.0" onAction="#btnPlaceOrderOnAction" prefHeight="46.0" prefWidth="178.0" style="-fx-background-color: #80ed99;" text="Place Order">
+      <JFXButton buttonType="RAISED" layoutX="1028.0" layoutY="675.0" onAction="#btnPlaceOrderOnAction" prefHeight="46.0" prefWidth="178.0" style="-fx-background-color: #80ed99;" text="Place Order">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -387,6 +387,11 @@
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="676.0" onAction="#btnPayNowOnAction" prefHeight="46.0" prefWidth="132.0" style="-fx-background-color: e7c6ff;" text="Pay Now">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>

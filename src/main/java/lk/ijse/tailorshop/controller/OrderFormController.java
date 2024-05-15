@@ -439,4 +439,14 @@ public class OrderFormController {
         stage.centerOnScreen();
     }
 
+    public void btnPayNowOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/payment_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Payment Form");
+        stage.centerOnScreen();
+    }
+
 }

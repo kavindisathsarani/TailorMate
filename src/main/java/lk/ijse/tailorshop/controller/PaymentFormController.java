@@ -325,5 +325,9 @@ public class PaymentFormController {
         }
     }
 
+    public void btnGenerateBillOnAction(ActionEvent actionEvent) {
+
+    }
+
 }
 

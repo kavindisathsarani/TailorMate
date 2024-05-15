@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/PaymentFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/model/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/model/Tm/PaymentTm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/repository/PaymentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/OrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/OrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/order_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/order_form.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="payment Form finished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +115,7 @@
       <workItem from="1715682008474" duration="773000" />
       <workItem from="1715744632711" duration="1011000" />
       <workItem from="1715746690193" duration="7842000" />
-      <workItem from="1715761155539" duration="3398000" />
+      <workItem from="1715761155539" duration="3737000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />
@@ -279,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715681469423</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="payment Form finished">
+      <option name="closed" value="true" />
+      <created>1715764693906</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715764693906</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +296,7 @@
     <MESSAGE value="dashboard upper menu bar done" />
     <MESSAGE value="login background changed" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="payment Form finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment Form finished" />
   </component>
 </project>

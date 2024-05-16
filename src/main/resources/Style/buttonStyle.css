@@ -8,6 +8,7 @@
 
 #btnMeasurement{
     -fx-border-color: #000000;
+
 }
 
 #btnMaterial{
@@ -24,4 +25,5 @@
 
 #btnHome{
     -fx-border-color: #000000;
+
 }

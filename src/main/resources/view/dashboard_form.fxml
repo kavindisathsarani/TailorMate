@@ -24,7 +24,7 @@
             <Image url="@../asserts/icon/tailor-with-sewing-cloth-pincushion-threads-fashion-designer-seamstress-scissors-and-measuring-to-make-clothes-in-flat-background-illustration-vector-removebg-preview.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="986.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9BCAE9;">
+      <AnchorPane layoutX="986.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9BCAE9; -fx-background-radius: 30;">
          <children>
             <Label layoutX="33.0" layoutY="111.0" prefHeight="40.0" prefWidth="134.0" text="  Customer " textFill="#1b1a1a">
                <font>
@@ -48,7 +48,7 @@
             <Font name="Calibri Bold" size="48.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="986.0" layoutY="414.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #48CAE4;">
+      <AnchorPane layoutX="986.0" layoutY="414.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #48CAE4; -fx-background-radius: 30;">
          <children>
             <Label layoutX="53.0" layoutY="115.0" style="-fx-background-color: #48CAE4;" text="Garments " textFill="#202020">
                <font>

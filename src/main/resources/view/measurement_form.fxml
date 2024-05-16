@@ -275,7 +275,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="289.0" onAction="#btnNewCustomerOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #2ecc71;" text="NEW" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="289.0" onAction="#btnNewCustomerOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #81c3d7;" text="NEW" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

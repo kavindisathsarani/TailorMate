@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.model.Customer;
 import lk.ijse.tailorshop.model.Payment;
 import lk.ijse.tailorshop.model.Tm.CustomerTm;
@@ -18,13 +19,19 @@ import lk.ijse.tailorshop.model.Tm.PaymentTm;
 import lk.ijse.tailorshop.repository.CustomerRepo;
 import lk.ijse.tailorshop.repository.OrderRepo;
 import lk.ijse.tailorshop.repository.PaymentRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PaymentFormController {
     @FXML
@@ -325,8 +332,23 @@ public class PaymentFormController {
         }
     }
 
-    public void btnGenerateBillOnAction(ActionEvent actionEvent) {
+    public void btnGenerateBillOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/garmentBill.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
 
+        Map<String, Object> data = new HashMap<>();
+        data.put("paymentID",txtPaymentId.getText());
+
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
 }

@@ -449,4 +449,14 @@ public class OrderFormController {
         stage.centerOnScreen();
     }
 
+    public void btnNewGarmentOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/garment_form.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Garment Form");
+        stage.centerOnScreen();
+    }
+
 }

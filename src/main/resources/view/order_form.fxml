@@ -388,9 +388,29 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="614.0" layoutY="676.0" onAction="#btnPayNowOnAction" prefHeight="46.0" prefWidth="132.0" style="-fx-background-color: e7c6ff;" text="Pay Now">
+      <JFXButton buttonType="RAISED" layoutX="604.0" layoutY="676.0" onAction="#btnPayNowOnAction" prefHeight="46.0" prefWidth="142.0" style="-fx-background-color: e7c6ff;" text="  Pay Now">
          <font>
             <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="31.0" fitWidth="44.0" layoutX="607.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/icons8-amazon-pay-32.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="160.0" layoutY="327.0" onAction="#btnNewGarmentOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #81c3d7;" text="NEW" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-add-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
    </children>

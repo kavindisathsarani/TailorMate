@@ -34,41 +34,20 @@ public class LoginFormController {
 
     @FXML
     private TextField txtusername;
-
+    private String username="kavi";
+    private String password="1234";
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
-    String username=txtusername.getText();
-    String password=pw.getText();
+        if (username.equals(txtusername.getText()) && password.equals(pw.getText())){
+            navigateToTheDashboard();
 
-     try {
-            checkCredential(username, password);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "OOPS! something went wrong").show();
-        }
-    }
-
-    private void checkCredential(String username, String password) throws SQLException, IOException {
-        String sql = "SELECT username, password FROM user WHERE username = ?";
-
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setObject(1, username);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        if(resultSet.next()) {
-            String dbPw = resultSet.getString(2);
-
-            if(dbPw.equals(password)) {
-                navigateToTheDashboard();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Password is incorrect!").show();
-            }
         } else {
-            new Alert(Alert.AlertType.INFORMATION, "username not found!").show();
+            new Alert(Alert.AlertType.ERROR,"Incorrect password or Username").show();
         }
     }
+
+
 
     public  void navigateToTheDashboard() throws IOException {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
@@ -83,17 +62,5 @@ public class LoginFormController {
         stage.setTitle("Dashboard Form");
     }
 
-    @FXML
-    void linkRegistrationOnAction(ActionEvent event) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/register_form.fxml"));
 
-        Scene scene = new Scene(rootNode);
-
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-
-        stage.setTitle("register Form");
-    }
 }

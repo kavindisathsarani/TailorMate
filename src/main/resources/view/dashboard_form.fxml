@@ -43,7 +43,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="29.0" layoutY="98.0" prefHeight="82.0" prefWidth="398.0" text="WELCOME HOME!" textFill="#2f3030">
+      <Label layoutX="14.0" layoutY="108.0" prefHeight="82.0" prefWidth="398.0" text="WELCOME HOME!" textFill="#2f3030">
          <font>
             <Font name="Calibri Bold" size="48.0" />
          </font>
@@ -68,7 +68,7 @@
          </children>
       </AnchorPane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a9c6d9" height="88.0" layoutX="1.0" stroke="#343536" strokeType="INSIDE" width="1242.0" />
-      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="368.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" text="Employees">
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="368.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" style="-fx-background-radius: 30;" text="Employees">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="198.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" text="Customers">
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="198.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" style="-fx-background-radius: 30;" text="Customers">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -98,7 +98,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="521.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" text="Measurements">
+      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="521.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" style="-fx-background-radius: 30;" text="Measurements">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -113,7 +113,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="719.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" text="Materials">
+      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="719.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="Materials">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -131,7 +131,7 @@
             <Insets />
          </opaqueInsets>
       </JFXButton>
-      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="866.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" text="Garments">
+      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="866.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" style="-fx-background-radius: 30;" text="Garments">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -146,7 +146,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1024.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" text="Orders">
+      <JFXButton buttonType="RAISED" layoutX="1024.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" style="-fx-background-radius: 30;" text="Orders">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -161,7 +161,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1156.0" layoutY="33.0" onAction="#btnExitOnAction" text="Exit">
+      <JFXButton buttonType="RAISED" layoutX="1156.0" layoutY="33.0" onAction="#btnExitOnAction" style="-fx-background-radius: 30;" text="Exit">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -184,7 +184,7 @@
             <Image url="@../asserts/icon/tailorfinallogo-removebg-preview.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" stylesheets="@../Style/buttonStyle.css" text="Home">
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" style="-fx-background-radius: 30; -fx-border-radius: 30;" stylesheets="@../Style/buttonStyle.css" text="Home">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

@@ -10,6 +10,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.db.DbConnection;
@@ -21,6 +22,7 @@ import lk.ijse.tailorshop.model.Tm.MaterialCartTm;
 import lk.ijse.tailorshop.repository.AddGarmentRepo;
 import lk.ijse.tailorshop.repository.GarmentRepo;
 import lk.ijse.tailorshop.repository.MaterialRepo;
+import lk.ijse.tailorshop.util.Regex;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -172,96 +174,122 @@ public class GarmentFormController {
 
     @FXML
     void btnAddGarmentOnAction(ActionEvent event) {
-        String garmentId = lblGarmentId.getText();
-        String name = txtName.getText();
-        String description=txtGarmentDescription.getText();
-        String category=txtCategory.getText();
-        String size=txtSize.getText();
-        double qtyOnHand=Double.parseDouble(txtQtyOnHand.getText());
-        double materialCost=Double.parseDouble(txtMaterialCost.getText());
-        double towage=Double.parseDouble(txtTowage.getText());
-        double totalPrice=Double.parseDouble(txtTotalPrice.getText());
+        if(txtTowage.getText().isEmpty() || txtTotalPrice.getText().isEmpty()|| txtMaterialCost.getText().isEmpty()
+                || txtQtyOnHand.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields!").show();
+
+        }else {
+
+            String garmentId = lblGarmentId.getText();
+            String name = txtName.getText();
+            String description = txtGarmentDescription.getText();
+            String category = txtCategory.getText();
+            String size = txtSize.getText();
+            double qtyOnHand = Double.parseDouble(txtQtyOnHand.getText());
+            double materialCost = Double.parseDouble(txtMaterialCost.getText());
+            double towage = Double.parseDouble(txtTowage.getText());
+            double totalPrice = Double.parseDouble(txtTotalPrice.getText());
 
 
-        var garment = new Garment(garmentId, name, description,category,size,qtyOnHand,materialCost,towage,totalPrice);
+            var garment = new Garment(garmentId, name, description, category, size, qtyOnHand, materialCost, towage, totalPrice);
 
-        List<MaterialDetail> mdList = new ArrayList<>();
-        for (int i = 0; i < tblMaterialCart.getItems().size(); i++) {
-            MaterialCartTm tm = mcList.get(i);
+            List<MaterialDetail> mdList = new ArrayList<>();
+            for (int i = 0; i < tblMaterialCart.getItems().size(); i++) {
+                MaterialCartTm tm = mcList.get(i);
 
-            MaterialDetail md = new MaterialDetail(
-                    garmentId,
-                    tm.getMaterialId(),
-                    tm.getQty()
-            );
-            mdList.add(md);
-        }
-
-        AddGarment ad = new AddGarment(garment, mdList);
-
-        try {
-            boolean isPlaced = AddGarmentRepo.addGarment(ad);
-            if(isPlaced) {
-                new Alert(Alert.AlertType.CONFIRMATION, "garment placed!").show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "garment not placed!").show();
+                MaterialDetail md = new MaterialDetail(
+                        garmentId,
+                        tm.getMaterialId(),
+                        tm.getQty()
+                );
+                mdList.add(md);
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
+            AddGarment ad = new AddGarment(garment, mdList);
+
+            if(isValid()) {
+                try {
+                    boolean isPlaced = AddGarmentRepo.addGarment(ad);
+                    if (isPlaced) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "garment placed!").show();
+                    } else {
+                        new Alert(Alert.AlertType.WARNING, "garment not placed!").show();
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
+            }else{
+                new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+
+            }
         }
 
+    }
 
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MATERIALCOST,txtMaterialCost)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOWAGE,txtTowage)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOTALPRICE,txtTotalPrice)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.QTYONHAND,txtQtyOnHand)) return false;
+        return true;
     }
 
     @FXML
     void btnAddInfoOnAction(ActionEvent event) {
-        String materialId = cmbMaterialId.getValue();
-        String description = lblMaterialDescription.getText();
-        double qty = Double.parseDouble(txtQty.getText());
-        double unitPrice = Double.parseDouble(lblUnitPrice.getText());
-        String customerId = lblCustomerId.getText();
-        double total = qty * unitPrice;
-        JFXButton btnRemove = new JFXButton("remove");
-        btnRemove.setCursor(Cursor.HAND);
 
-        btnRemove.setOnAction((e) -> {
-            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+        if(txtTowage.getText().isEmpty() || txtTotalPrice.getText().isEmpty()|| txtMaterialCost.getText().isEmpty()
+                 || txtQtyOnHand.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields!").show();
 
-            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+        }else {
 
-            if(type.orElse(no) == yes) {
-                int selectedIndex = tblMaterialCart.getSelectionModel().getSelectedIndex();
-                mcList.remove(selectedIndex);
+            String materialId = cmbMaterialId.getValue();
+            String description = lblMaterialDescription.getText();
+            double qty = Double.parseDouble(txtQty.getText());
+            double unitPrice = Double.parseDouble(lblUnitPrice.getText());
+            String customerId = lblCustomerId.getText();
+            double total = qty * unitPrice;
+            JFXButton btnRemove = new JFXButton("remove");
+            btnRemove.setCursor(Cursor.HAND);
 
-                tblMaterialCart.refresh();
-                calculateNetTotal();
+            btnRemove.setOnAction((e) -> {
+                ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+                if (type.orElse(no) == yes) {
+                    int selectedIndex = tblMaterialCart.getSelectionModel().getSelectedIndex();
+                    mcList.remove(selectedIndex);
+
+                    tblMaterialCart.refresh();
+                    calculateNetTotal();
+                }
+            });
+
+            for (int i = 0; i < tblMaterialCart.getItems().size(); i++) {
+                if (materialId.equals(colMaterialId.getCellData(i))) {
+                    qty += mcList.get(i).getQty();
+                    total = unitPrice * qty;
+
+                    mcList.get(i).setQty(qty);
+                    mcList.get(i).setTotal(total);
+
+                    tblMaterialCart.refresh();
+                    calculateNetTotal();
+                    txtQty.setText("");
+                    return;
+                }
             }
-        });
 
-        for (int i = 0; i < tblMaterialCart.getItems().size(); i++) {
-            if (materialId.equals(colMaterialId.getCellData(i))) {
-                qty += mcList.get(i).getQty();
-                total = unitPrice * qty;
+            MaterialCartTm materialCartTm = new MaterialCartTm(materialId, description, qty, unitPrice, customerId, total, btnRemove);
 
-                mcList.get(i).setQty(qty);
-                mcList.get(i).setTotal(total);
+            mcList.add(materialCartTm);
 
-                tblMaterialCart.refresh();
-                calculateNetTotal();
-                txtQty.setText("");
-                return;
-            }
+            tblMaterialCart.setItems(mcList);
+            txtQty.setText("");
+            calculateNetTotal();
         }
-
-        MaterialCartTm materialCartTm = new MaterialCartTm(materialId, description, qty, unitPrice,customerId, total, btnRemove);
-
-        mcList.add(materialCartTm);
-
-        tblMaterialCart.setItems(mcList);
-        txtQty.setText("");
-        calculateNetTotal();
-
     }
 
     private void calculateNetTotal() {
@@ -404,6 +432,29 @@ public class GarmentFormController {
         stage.setResizable(false);
         stage.setTitle("Dashboard Form");
         stage.centerOnScreen();
+    }
+
+    public void txtTowageOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOWAGE,txtTowage);
+
+    }
+
+    public void txtTotalPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOTALPRICE,txtTotalPrice);
+
+    }
+
+    public void txtMaterialCostOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MATERIALCOST,txtMaterialCost);
+    }
+
+    public void txtOrderQtyKeyOnReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ORDERQTY,txtQty);
+    }
+
+    public void txtQtyOnHandKeyOnReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.QTYONHAND,txtQtyOnHand);
+
     }
 
 }

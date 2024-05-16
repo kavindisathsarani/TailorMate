@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="payment Form finished">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/garmentBill.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-amazon-pay-32.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/CustomerFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/EmployeeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/EmployeeFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/GarmentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/GarmentFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/MaterialFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/MaterialFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/MeasurementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/MeasurementFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/OrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/OrderFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/PaymentFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/buttonStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/buttonStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/TextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/TextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Report/garmentBill.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Report/garmentBill.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/employee_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/employee_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/garment_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/garment_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/material_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/material_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/measurement_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/measurement_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/order_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/order_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" afterDir="false" />
@@ -50,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DELL/Documents/tailorShop-jasperbill/src/main/resources/asserts/icon",
+    "last_opened_file_path": "C:/Users/DELL/Documents/tailorShop-jasperbill-final1/src/main/resources/asserts/icon",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,15 +72,28 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill-final1\src\main\resources\asserts\icon" />
+      <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill-final1\src\main\resources\Report" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill\src\main\resources\asserts\icon" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill\src\main\resources\Report" />
       <recent name="C:\Users\DELL\Documents\tailorShop-dashboard-test\src\main\resources\asserts\icon" />
-      <recent name="C:\Users\DELL\Documents\tailorShop-after-validation-jasper\src\main\resources\asserts\icon" />
-      <recent name="C:\Users\DELL\Documents\tailorShop-after-validation-jasper\src\main\resources\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lk.ijse.tailorshop.controller" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,6 +139,8 @@
       <workItem from="1715761155539" duration="3737000" />
       <workItem from="1715765579600" duration="3833000" />
       <workItem from="1715861767479" duration="4688000" />
+      <workItem from="1715869197621" duration="4479000" />
+      <workItem from="1715875624260" duration="12909000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />

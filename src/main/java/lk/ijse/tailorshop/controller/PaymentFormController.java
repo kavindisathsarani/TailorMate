@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.tailorshop.db.DbConnection;
@@ -19,6 +20,7 @@ import lk.ijse.tailorshop.model.Tm.PaymentTm;
 import lk.ijse.tailorshop.repository.CustomerRepo;
 import lk.ijse.tailorshop.repository.OrderRepo;
 import lk.ijse.tailorshop.repository.PaymentRepo;
+import lk.ijse.tailorshop.util.Regex;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -265,26 +267,45 @@ public class PaymentFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String paymentId=txtPaymentId.getText();
-        double TotalCost= Double.parseDouble(txtNetTotal.getText());
-        double amount= Double.parseDouble(txtPaidAmount.getText());
-        double balance= Double.parseDouble(txtBalance.getText());
-        String status = txtStatus.getText();
-        Date date = Date.valueOf(LocalDate.now());
-        String orderId=txtOrderId.getText();
+        if(txtOrderId.getText().isEmpty()|| txtNetTotal.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields before adding a new payment!").show();
 
-        Payment payment = new Payment(paymentId, TotalCost, amount, balance,status,date,orderId);
+        }else {
 
-        try {
-            boolean isSaved = PaymentRepo.save(payment);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "payment saved!").show();
-                initialize();
+            String paymentId = txtPaymentId.getText();
+            double TotalCost = Double.parseDouble(txtNetTotal.getText());
+            double amount = Double.parseDouble(txtPaidAmount.getText());
+            double balance = Double.parseDouble(txtBalance.getText());
+            String status = txtStatus.getText();
+            Date date = Date.valueOf(LocalDate.now());
+            String orderId = txtOrderId.getText();
+
+            Payment payment = new Payment(paymentId, TotalCost, amount, balance, status, date, orderId);
+
+            if(isValid()) {
+                try {
+                    boolean isSaved = PaymentRepo.save(payment);
+                    if (isSaved) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "payment saved!").show();
+                        initialize();
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.PAYMENTID,txtPaymentId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOTALCOST,txtNetTotal)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.AMOUNT,txtPaidAmount)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.BALANCE,txtBalance)) return false;
+        return true;
+    }
+
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
@@ -298,15 +319,20 @@ public class PaymentFormController {
 
         Payment payment = new Payment(paymentId, TotalCost, amount, balance,status,date,orderId);
 
-        try {
-            boolean isUpdated = PaymentRepo.update(payment);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "payment updated!").show();
-                initialize();
+        if(isValid()) {
+            try {
+                boolean isUpdated = PaymentRepo.update(payment);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "payment updated!").show();
+                    initialize();
 
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+
         }
 
     }
@@ -349,6 +375,28 @@ public class PaymentFormController {
                         DbConnection.getInstance().getConnection());
 
         JasperViewer.viewReport(jasperPrint,false);
+    }
+
+
+
+    public void txtTotalCostOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TOTALCOST,txtNetTotal);
+
+    }
+
+    public void txtAmountOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.AMOUNT,txtPaidAmount);
+
+    }
+
+    public void txtBalanceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.BALANCE,txtBalance);
+
+    }
+
+
+    public void txtPaymentIdOnAction(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.PAYMENTID,txtPaymentId);
     }
 
 }

@@ -83,7 +83,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtMaterialCost" layoutX="316.0" layoutY="267.0" prefHeight="40.0" prefWidth="372.0">
+      <TextField fx:id="txtMaterialCost" layoutX="316.0" layoutY="267.0" onKeyReleased="#txtMaterialCostOnKeyReleased" prefHeight="40.0" prefWidth="372.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -98,12 +98,12 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTowage" layoutX="707.0" layoutY="267.0" prefHeight="40.0" prefWidth="262.0">
+      <TextField fx:id="txtTowage" layoutX="707.0" layoutY="267.0" onKeyReleased="#txtTowageOnKeyReleased" prefHeight="40.0" prefWidth="262.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtTotalPrice" layoutX="1004.0" layoutY="267.0" prefHeight="40.0" prefWidth="168.0">
+      <TextField fx:id="txtTotalPrice" layoutX="1004.0" layoutY="267.0" onKeyReleased="#txtTotalPriceOnKeyReleased" prefHeight="40.0" prefWidth="168.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -139,7 +139,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="1056.0" layoutY="378.0" onAction="#txtQtyOnAction" prefHeight="40.0" prefWidth="128.0">
+      <TextField fx:id="txtQty" layoutX="1056.0" layoutY="378.0" onAction="#txtQtyOnAction" onKeyReleased="#txtOrderQtyKeyOnReleased" prefHeight="40.0" prefWidth="128.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -235,7 +235,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand" layoutX="42.0" layoutY="300.0" prefHeight="40.0" prefWidth="230.0">
+      <TextField fx:id="txtQtyOnHand" layoutX="42.0" layoutY="300.0" onKeyReleased="#txtQtyOnHandKeyOnReleased" prefHeight="40.0" prefWidth="230.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -256,7 +256,7 @@
          </graphic>
       </JFXButton>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a9c6d9" height="88.0" layoutX="2.0" stroke="#343536" strokeType="INSIDE" width="1242.0" />
-      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="369.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" text="Employees">
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="357.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" style="-fx-background-radius: 30;" text="Employees">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -271,7 +271,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="199.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" text="Customers">
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="199.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" style="-fx-background-radius: 30;" text="Customers">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -286,7 +286,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="522.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" text="Measurements">
+      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="522.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" style="-fx-background-radius: 30;" text="Measurements">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -301,7 +301,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="720.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" text="Materials">
+      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="720.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="Materials">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -319,7 +319,7 @@
             <Insets />
          </opaqueInsets>
       </JFXButton>
-      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="867.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" stylesheets="@../Style/buttonStyle.css" text="Garments">
+      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="875.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" style="-fx-background-radius: 30; -fx-border-radius: 30;" stylesheets="@../Style/buttonStyle.css" text="Garments">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -334,7 +334,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1025.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" text="Orders">
+      <JFXButton buttonType="RAISED" layoutX="1025.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" style="-fx-background-radius: 30;" text="Orders">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -349,7 +349,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1157.0" layoutY="33.0" onAction="#btnExitOnAction" text="Exit">
+      <JFXButton buttonType="RAISED" layoutX="1157.0" layoutY="33.0" onAction="#btnExitOnAction" style="-fx-background-radius: 30;" text="Exit">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -372,7 +372,7 @@
             <Image url="@../asserts/icon/tailorfinallogo-removebg-preview.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" text="Home">
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" style="-fx-background-radius: 30;" text="Home">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

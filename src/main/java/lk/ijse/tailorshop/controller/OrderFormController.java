@@ -190,57 +190,68 @@ public class OrderFormController {
 
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
-        String garmentId = cmbGarmentId.getValue();
-        String name = lblName.getText();
-        String description = lblDescription.getText();
-        String category = lblCategory.getText();
-        String size = lblSize.getText();
-        int qty = Integer.parseInt(txtQty.getText());
-        double materialCost = Double.parseDouble(lblMaterialCost.getText());
-        double towage = Double.parseDouble(lblTowage.getText());
-        double totalPrice = Double.parseDouble(lblTotalPrice.getText());
-        double amount = qty * totalPrice;
-        JFXButton btnRemove = new JFXButton("remove");
-        btnRemove.setCursor(Cursor.HAND);
+        if(txtCustomerId.getText().isEmpty() || txtDuedate.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields!").show();
 
-        btnRemove.setOnAction((e) -> {
-            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+        }else {
 
-            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+            String garmentId = cmbGarmentId.getValue();
+            String name = lblName.getText();
+            String description = lblDescription.getText();
+            String category = lblCategory.getText();
+            String size = lblSize.getText();
+            int qty = Integer.parseInt(txtQty.getText());
+            double materialCost = Double.parseDouble(lblMaterialCost.getText());
+            double towage = Double.parseDouble(lblTowage.getText());
+            double totalPrice = Double.parseDouble(lblTotalPrice.getText());
+            double amount = qty * totalPrice;
+            JFXButton btnRemove = new JFXButton("remove");
+            btnRemove.setCursor(Cursor.HAND);
 
-            if(type.orElse(no) == yes) {
-                int selectedIndex = tblGarmentCart.getSelectionModel().getSelectedIndex();
-                gcList.remove(selectedIndex);
+            btnRemove.setOnAction((e) -> {
+                ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-                tblGarmentCart.refresh();
-                calculateNetTotal();
+                Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+                if (type.orElse(no) == yes) {
+                    int selectedIndex = tblGarmentCart.getSelectionModel().getSelectedIndex();
+                    gcList.remove(selectedIndex);
+
+                    tblGarmentCart.refresh();
+                    calculateNetTotal();
+                }
+            });
+
+            for (int i = 0; i < tblGarmentCart.getItems().size(); i++) {
+                if (garmentId.equals(colGarmentId.getCellData(i))) {
+                    qty += gcList.get(i).getQty();
+                    amount = totalPrice * qty;
+
+                    gcList.get(i).setQty(qty);
+                    gcList.get(i).setAmount(amount);
+
+                    tblGarmentCart.refresh();
+                    calculateNetTotal();
+                    txtQty.setText("");
+                    return;
+                }
             }
-        });
 
-        for (int i = 0; i < tblGarmentCart.getItems().size(); i++) {
-            if (garmentId.equals(colGarmentId.getCellData(i))) {
-                qty += gcList.get(i).getQty();
-                amount = totalPrice * qty;
+            GarmentCartTm garmentCartTm = new GarmentCartTm(garmentId, name, description, category, size, qty, materialCost, towage, totalPrice, amount, btnRemove);
 
-                gcList.get(i).setQty(qty);
-                gcList.get(i).setAmount(amount);
+            gcList.add(garmentCartTm);
 
-                tblGarmentCart.refresh();
-                calculateNetTotal();
-                txtQty.setText("");
-                return;
-            }
+            tblGarmentCart.setItems(gcList);
+            txtQty.setText("");
+            calculateNetTotal();
         }
+    }
 
-        GarmentCartTm garmentCartTm = new GarmentCartTm(garmentId, name, description, category,size,qty,materialCost,towage,totalPrice,amount, btnRemove);
-
-        gcList.add(garmentCartTm);
-
-        tblGarmentCart.setItems(gcList);
-        txtQty.setText("");
-        calculateNetTotal();
-
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtCustomerId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.DUEDATE,txtDuedate)) return false;
+        return true;
     }
 
     private void calculateNetTotal() {
@@ -265,13 +276,18 @@ public class OrderFormController {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
+        if (txtCustomerId.getText().isEmpty() || txtDuedate.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields!").show();
+
+        } else {
+
         String orderId = lblOrderId.getText();
         Date startDate = Date.valueOf(LocalDate.now());
-        Date dueDate= Date.valueOf(txtDuedate.getText());
+        Date dueDate = Date.valueOf(txtDuedate.getText());
         String status = txtStatus.getText();
-        String customerId=txtCustomerId.getText();
+        String customerId = txtCustomerId.getText();
 
-        var order = new Order(orderId, startDate, dueDate,status,customerId);
+        var order = new Order(orderId, startDate, dueDate, status, customerId);
 
         List<OrderDetail> odList = new ArrayList<>();
         for (int i = 0; i < tblGarmentCart.getItems().size(); i++) {
@@ -287,17 +303,22 @@ public class OrderFormController {
 
         PlaceOrder po = new PlaceOrder(order, odList);
 
-        try {
-            boolean isPlaced = PlaceOrderRepo.placeOrder(po);
-            if(isPlaced) {
-                new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "order not placed!").show();
+        if(isValid()) {
+            try {
+                boolean isPlaced = PlaceOrderRepo.placeOrder(po);
+                if (isPlaced) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "order not placed!").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
 
+        }
+      }
     }
 
     @FXML
@@ -457,6 +478,11 @@ public class OrderFormController {
         stage.setResizable(false);
         stage.setTitle("Garment Form");
         stage.centerOnScreen();
+    }
+
+    public void txtQtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.PLACEORDERQTY,txtQty);
+
     }
 
 }

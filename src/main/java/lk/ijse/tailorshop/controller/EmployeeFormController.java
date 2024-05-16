@@ -149,23 +149,32 @@ public class EmployeeFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String employeeId=txtId.getText();
-        String name=txtName.getText();
-        String address=txtAddress.getText();
-        int contactNumber=Integer.parseInt(txtContactNumber.getText());
-        String position=txtPosition.getText();
+        if(txtId.getText().isEmpty() || txtAddress.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields before adding a new employee!").show();
 
-        Employee employee = new Employee(employeeId,name,address,contactNumber,position);
+        }else {
+            String employeeId = txtId.getText();
+            String name = txtName.getText();
+            String address = txtAddress.getText();
+            int contactNumber = Integer.parseInt(txtContactNumber.getText());
+            String position = txtPosition.getText();
 
-        try {
-            boolean isSaved = EmployeeRepo.save(employee);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Employee saved!").show();
-                initialize();
+            Employee employee = new Employee(employeeId, name, address, contactNumber, position);
 
+            if (isValid()) {
+                try {
+                    boolean isSaved = EmployeeRepo.save(employee);
+                    if (isSaved) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "Employee saved!").show();
+                        initialize();
+
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 
@@ -179,16 +188,20 @@ public class EmployeeFormController {
 
         Employee employee = new Employee(employeeId,name,address,contactNumber,position);
 
-        try {
-            boolean isUpdated = EmployeeRepo.update(employee);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Employee updated!").show();
-                initialize();
+     if(isValid()) {
+         try {
+             boolean isUpdated = EmployeeRepo.update(employee);
+             if (isUpdated) {
+                 new Alert(Alert.AlertType.CONFIRMATION, "Employee updated!").show();
+                 initialize();
 
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
+             }
+         } catch (SQLException e) {
+             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+         }
+     }else {
+         new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+       }
     }
 
     @FXML
@@ -218,6 +231,12 @@ public class EmployeeFormController {
     public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ADDRESS,txtAddress);
 
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMPLOYEEID,txtId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ADDRESS,txtAddress)) return false;
+        return true;
     }
 
     public void btnEmployeeOnAction(ActionEvent actionEvent) throws IOException {

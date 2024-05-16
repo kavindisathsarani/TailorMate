@@ -30,7 +30,7 @@
             <Font name="Calibri Bold" size="37.0" />
          </font>
       </Label>
-      <TextField fx:id="txtusername" layoutX="796.0" layoutY="238.0" prefHeight="51.0" prefWidth="410.0" promptText="Enter username">
+      <TextField fx:id="txtusername" layoutX="796.0" layoutY="238.0" prefHeight="51.0" prefWidth="410.0" promptText="Type your username">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -65,7 +65,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <PasswordField fx:id="pw" layoutX="796.0" layoutY="344.0" prefHeight="51.0" prefWidth="410.0" promptText="Enter password">
+      <PasswordField fx:id="pw" layoutX="796.0" layoutY="344.0" prefHeight="51.0" prefWidth="410.0" promptText="Type your password">
          <font>
             <Font size="18.0" />
          </font>

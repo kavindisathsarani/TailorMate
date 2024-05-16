@@ -167,24 +167,42 @@ public class MaterialFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String materialId=txtMaterialId.getText();
-        String description=txtDescription.getText();
-        double qty= Double.parseDouble(txtQty.getText());
-        double unitPrice= Double.parseDouble(txtUnitPrice.getText());
-        String customerId=txtCustomerId.getText();
 
-        Material material = new Material(materialId, description, qty, unitPrice,customerId);
+        if(txtMaterialId.getText().isEmpty() || txtQty.getText().isEmpty()|| txtUnitPrice.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields before adding a new material!").show();
 
-        try {
-            boolean isSaved = MaterialRepo.save(material);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "material saved!").show();
-                initialize();
+        }else {
 
+            String materialId = txtMaterialId.getText();
+            String description = txtDescription.getText();
+            double qty = Double.parseDouble(txtQty.getText());
+            double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+            String customerId = txtCustomerId.getText();
+
+            Material material = new Material(materialId, description, qty, unitPrice, customerId);
+
+            if(isValid()) {
+                try {
+                    boolean isSaved = MaterialRepo.save(material);
+                    if (isSaved) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "material saved!").show();
+                        initialize();
+
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MATERIALID,txtMaterialId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.QTY,txtQty)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.UNITPRICE,txtUnitPrice)) return false;
+        return true;
     }
 
     @FXML
@@ -197,15 +215,19 @@ public class MaterialFormController {
 
         Material material = new Material(materialId, description, qty, unitPrice,customerId);
 
-        try {
-            boolean isUpdated = MaterialRepo.update(material);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "materail updated!").show();
-                initialize();
+        if(isValid()) {
+            try {
+                boolean isUpdated = MaterialRepo.update(material);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "materail updated!").show();
+                    initialize();
 
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
         }
     }
 
@@ -345,5 +367,10 @@ public class MaterialFormController {
         stage.centerOnScreen();
     }
 
+
+    public void txtUnitPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.UNITPRICE,txtUnitPrice);
+
+    }
 
 }

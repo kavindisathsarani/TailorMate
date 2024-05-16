@@ -262,34 +262,64 @@ public class MeasurementFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String measurementId=txtMeasurementId.getText();
-        double neckSize=Double.parseDouble(txtNeck.getText());
-        double armhole=Double.parseDouble(txtArm.getText());
-        double sleeveLength=Double.parseDouble(txtSleeve.getText());
-        double wrist=Double.parseDouble(txtWrist.getText());
-        double chest=Double.parseDouble(txtChest.getText());
-        double torsoLength=Double.parseDouble(txtTorso.getText());
-        double waist=Double.parseDouble(txtWaist.getText());
-        double hip=Double.parseDouble(txtHip.getText());
-        double crotchLength=Double.parseDouble(txtCrotch.getText());
-        double shoulderLength=Double.parseDouble(txtShoulder.getText());
-        double thighCircumference=Double.parseDouble(txtThigh.getText());
-        double waistToHem=Double.parseDouble(txtWaistToHem.getText());
-        String employeeId=txtEmployeeId.getText();
-        String customerId=txtCustomerId.getText();
 
-        Measurement measurement = new Measurement(measurementId, neckSize, armhole, sleeveLength,wrist,chest,torsoLength,waist,hip,crotchLength,shoulderLength,thighCircumference,waistToHem,employeeId,customerId);
+        if(txtMeasurementId.getText().isEmpty() || txtCustomerId.getText().isEmpty()|| txtEmployeeId.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in  empty fields before adding a new measurement!").show();
 
-        try {
-            boolean isSaved = MeasurementRepo.save(measurement);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "measurement saved!").show();
-                initialize();
+        }else {
 
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            String measurementId = txtMeasurementId.getText();
+            double neckSize = Double.parseDouble(txtNeck.getText());
+            double armhole = Double.parseDouble(txtArm.getText());
+            double sleeveLength = Double.parseDouble(txtSleeve.getText());
+            double wrist = Double.parseDouble(txtWrist.getText());
+            double chest = Double.parseDouble(txtChest.getText());
+            double torsoLength = Double.parseDouble(txtTorso.getText());
+            double waist = Double.parseDouble(txtWaist.getText());
+            double hip = Double.parseDouble(txtHip.getText());
+            double crotchLength = Double.parseDouble(txtCrotch.getText());
+            double shoulderLength = Double.parseDouble(txtShoulder.getText());
+            double thighCircumference = Double.parseDouble(txtThigh.getText());
+            double waistToHem = Double.parseDouble(txtWaistToHem.getText());
+            String employeeId = txtEmployeeId.getText();
+            String customerId = txtCustomerId.getText();
+
+            Measurement measurement = new Measurement(measurementId, neckSize, armhole, sleeveLength, wrist, chest, torsoLength, waist, hip, crotchLength, shoulderLength, thighCircumference, waistToHem, employeeId, customerId);
+
+         if(isValid()) {
+             try {
+                 boolean isSaved = MeasurementRepo.save(measurement);
+                 if (isSaved) {
+                     new Alert(Alert.AlertType.CONFIRMATION, "measurement saved!").show();
+                     initialize();
+
+                 }
+             } catch (SQLException e) {
+                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+             }
+         }else {
+             new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+         }
         }
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.MEASUREMENTID,txtMeasurementId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMPLOYEEID,txtEmployeeId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtCustomerId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.NECKSIZE,txtNeck)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ARMHOLE,txtArm)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.SLEEVELENGTH,txtSleeve)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WRIST,txtWrist)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CHEST,txtChest)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TORSOLENGTH,txtTorso)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WAIST,txtWaist)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.HIP,txtHip)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CROTCHLENGTH,txtCrotch)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.SHOULDERWIDTH,txtShoulder)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.THIGHCIRCUMFERENCE,txtThigh)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WAISTTOHEM,txtWaistToHem)) return false;
+        return true;
     }
 
     @FXML
@@ -312,15 +342,20 @@ public class MeasurementFormController {
 
         Measurement measurement = new Measurement(measurementId, neckSize, armhole, sleeveLength,wrist,chest,torsoLength,waist,hip,crotchLength,shoulderLength,thighCircumference,waistToHem,employeeId,customerId);
 
-        try {
-            boolean isUpdated = MeasurementRepo.update(measurement);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "measurement updated!").show();
-                initialize();
+        if(isValid()) {
+            try {
+                boolean isUpdated = MeasurementRepo.update(measurement);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "measurement updated!").show();
+                    initialize();
 
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+
         }
     }
 
@@ -468,6 +503,66 @@ public class MeasurementFormController {
         stage.setTitle("Dashboard Form");
         stage.centerOnScreen();
     }
+
+    public void txtNeckOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.NECKSIZE,txtNeck);
+
+    }
+
+    public void txtArmholeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ARMHOLE,txtArm);
+    }
+
+    public void txtSleeveLengthOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.SLEEVELENGTH,txtSleeve);
+
+    }
+
+    public void txtWristOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WRIST,txtWrist);
+
+    }
+
+    public void txtChestOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CHEST,txtChest);
+
+    }
+
+    public void txtTorsoOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.TORSOLENGTH,txtTorso);
+
+    }
+
+    public void txtWaistOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WAIST,txtWaist);
+
+    }
+
+    public void txtHipOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.HIP,txtHip);
+
+    }
+
+    public void txtCrotchLengthOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CROTCHLENGTH,txtCrotch);
+
+    }
+
+    public void txtShoulderLengthOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.SHOULDERWIDTH,txtShoulder);
+
+    }
+
+    public void txtThighCircumferenceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.THIGHCIRCUMFERENCE,txtThigh);
+
+    }
+
+    public void txtWaistToHemOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.tailorshop.util.TextField.WAISTTOHEM,txtWaistToHem);
+
+    }
+
 
 }
 

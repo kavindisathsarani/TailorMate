@@ -171,24 +171,33 @@ public class CustomerFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-     //save customer
-     String customerId=txtId.getText();
-     String name=txtName.getText();
-     String gender=txtGender.getText();
-     String address=txtAddress.getText();
-     int contactNumber=Integer.parseInt(txtContactNumber.getText());
-     String email=txtEmail.getText();
+        if(txtId.getText().isEmpty() || txtAddress.getText().isEmpty()|| txtEmail.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill in empty fields before adding a new customer!").show();
 
-        Customer customer = new Customer(customerId, name, gender, address,contactNumber,email);
+        }else {
+            //save customer
+            String customerId = txtId.getText();
+            String name = txtName.getText();
+            String gender = txtGender.getText();
+            String address = txtAddress.getText();
+            int contactNumber = Integer.parseInt(txtContactNumber.getText());
+            String email = txtEmail.getText();
 
-        try {
-            boolean isSaved = CustomerRepo.save(customer);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
-                initialize();
+            Customer customer = new Customer(customerId, name, gender, address, contactNumber, email);
+
+            if (isValid()) {
+                try {
+                    boolean isSaved = CustomerRepo.save(customer);
+                    if (isSaved) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                        initialize();
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
+            }else{
+                new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 
@@ -205,17 +214,20 @@ public class CustomerFormController {
 
         Customer customer = new Customer(customerId, name, gender, address,contactNumber,email);
 
-        try {
-            boolean isUpdated = CustomerRepo.update(customer);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
-                initialize();
+       if(isValid()) {
+            try {
+                boolean isUpdated = CustomerRepo.update(customer);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+                    initialize();
 
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
-
+        }else{
+           new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
+       }
     }
 
     @FXML
@@ -245,6 +257,13 @@ public class CustomerFormController {
 
     public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ADDRESS,txtAddress);
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.CUSTOMERID,txtId)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.ADDRESS,txtAddress)) return false;
+        if (!Regex.setTextColor(lk.ijse.tailorshop.util.TextField.EMAIL,txtEmail)) return false;
+        return true;
     }
 
 

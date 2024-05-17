@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="completely deleted registration">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/finalBill.jrxml" afterDir="false" />
+    <list default="true" id="5eaeb14c-b0ef-4ba5-b8aa-5380041704c8" name="Changes" comment="jasper report done with only using payment table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/PaymentFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +53,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Documents\tailorShop-without-registration\src\main\resources\Report" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill-final1\src\main\resources\asserts\icon" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill-final1\src\main\resources\Report" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill\src\main\resources\asserts\icon" />
       <recent name="C:\Users\DELL\Documents\tailorShop-jasperbill\src\main\resources\Report" />
-      <recent name="C:\Users\DELL\Documents\tailorShop-dashboard-test\src\main\resources\asserts\icon" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lk.ijse.tailorshop.controller" />
@@ -113,7 +111,7 @@
       <workItem from="1715875624260" duration="12909000" />
       <workItem from="1715888749413" duration="575000" />
       <workItem from="1715889335321" duration="635000" />
-      <workItem from="1715927965836" duration="1101000" />
+      <workItem from="1715927965836" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="first project">
       <option name="closed" value="true" />
@@ -283,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715889882427</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="jasper report done with only using payment table">
+      <option name="closed" value="true" />
+      <created>1715929963867</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715929963867</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +310,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="payment Form finished" />
     <MESSAGE value="completely deleted registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="completely deleted registration" />
+    <MESSAGE value="jasper report done with only using payment table" />
+    <option name="LAST_COMMIT_MESSAGE" value="jasper report done with only using payment table" />
   </component>
 </project>

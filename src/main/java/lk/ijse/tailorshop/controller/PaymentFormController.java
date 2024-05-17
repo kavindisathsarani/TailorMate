@@ -360,7 +360,7 @@ public class PaymentFormController {
 
     public void btnGenerateBillOnAction(ActionEvent actionEvent) throws JRException, SQLException {
         JasperDesign jasperDesign =
-                JRXmlLoader.load("src/main/resources/Report/garmentBill.jrxml");
+                JRXmlLoader.load("src/main/resources/Report/finalBill.jrxml");
         JasperReport jasperReport =
                 JasperCompileManager.compileReport(jasperDesign);
 
